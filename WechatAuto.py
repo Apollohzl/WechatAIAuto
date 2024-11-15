@@ -53,7 +53,7 @@ def request_url(name:str):
     data["stream"] = False
     header = {
         'Content-Type': 'application/json',
-        'Authorization': "Bearer cGjFqEijmkhPaFdFwadZ:EIkybVKAPNZTkVckxHYc"
+        'Authorization': "Bearer YOURPASSWORD"
     }
     response = requests.post(url, headers=header, json=data, stream=True)
     choice = json.loads(response.text)
