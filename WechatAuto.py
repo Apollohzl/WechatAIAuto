@@ -5,10 +5,6 @@ import json
 from uiautomation import WindowControl
 import os
 
-
-
-# 存储每个用户的对话历史
-conversation_history = {}
  
 # 允许回复的nickname列表
 allowed_nicknames = {"AI小号"}  # 修改为你想要回复的nickname
