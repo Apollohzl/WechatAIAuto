@@ -39,7 +39,7 @@ def chang_true_user_history_to_three():
 def build_history():
     for member in allowed_nicknames:
         history[member]=[]
-def request_url(name:str):
+def request_url(name):
     url = "https://spark-api-open.xf-yun.com/v1/chat/completions"
     new_list_to_robort=[first_message_to_robot]
     for i in history[name]:
@@ -71,7 +71,6 @@ def check_wechat_messages(hw):
             Chatmsg_name = chatMsg.Name
             if "已置顶" in Chatmsg_name:
                 Chatmsg_name = Chatmsg_name.replace("已置顶","")
-            #print(chatMsg.Name)
             match = re.match(r'(.+?)(\d+)条新消息', Chatmsg_name)
             if match:
                 nickname = match.group(1)
@@ -99,8 +98,6 @@ def getMsg_send(nickname):
             wx.TextControl(SubName=msg[:5]).RightClick()
         else:
             wx.TextControl(SubName=last_msg[:5]).RightClick()
-    else:
-        print("we.Name not True L:127")
  
 
 build_history()
