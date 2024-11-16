@@ -4,7 +4,11 @@ import requests
 import json
 from uiautomation import WindowControl
 import os
+from dotenv import load_dotenv # pip install python-dotenv
 
+# 加载环境变量
+load_dotenv()
+SPARKAI_API_KEY = os.getenv("SPARKAI_API_KEY")
  
 # 允许回复的nickname列表
 allowed_nicknames = {"AI小号"}  # 修改为你想要回复的nickname
@@ -54,7 +58,7 @@ def request_url(name):
     data["stream"] = False
     header = {
         'Content-Type': 'application/json',
-        'Authorization': "Bearer YOURPASSWORD"
+        'Authorization': f"Bearer {SPARKAI_API_KEY}"
     }
     response = requests.post(url, headers=header, json=data, stream=True)
     choice = json.loads(response.text)
