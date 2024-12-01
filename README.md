@@ -102,10 +102,10 @@ def request_url(name):
 
 - 这部分是用来判断是否有新消息
 因为我们的联系列表中获取的信息值是类似这样的
-    -- 小a
-    -- 小b已置顶
-    -- 小c已置顶n条新消息                      #n<=99
-    -- 小d有n条新消息
+    小a
+    小b已置顶
+    小c已置顶n条新消息       #n<=99
+    小dn条新消息
 ```
 def check_wechat_messages(hw):
     bbb = hw.GetChildren()
