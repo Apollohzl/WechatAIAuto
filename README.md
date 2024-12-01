@@ -105,10 +105,10 @@ def request_url(name):
 
 - 这部分是用来判断是否有新消息
 因为我们的联系列表中获取的信息值是类似这样的
-    小a
-    小b已置顶
-    小c已置顶n条新消息                      #n<=99
-    小d有n条新消息
+    -- 小a
+    -- 小b已置顶
+    -- 小c已置顶n条新消息                      #n<=99
+    -- 小d有n条新消息
 ```
 def check_wechat_messages(hw):
     bbb = hw.GetChildren()
@@ -127,7 +127,6 @@ def check_wechat_messages(hw):
             if match:
                 nickname = match
                 if nickname in allowed_nicknames:  # 仅在nickname在允许列表中时才回复
-                
                     printInfo = f"来自 {nickname} 的1条消息"
                     print(printInfo)
                     getMsg_send(nickname)
